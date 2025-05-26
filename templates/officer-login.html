@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officer Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}">
+</head>
+<body>
+<h1>LOGIN</h1>
+{% if message %}
+  <script>
+    alert("{{ message }}");
+  </script>
+  {% endif %}
+<form action="/officer-login" method="post">
+  <label for="officer-username">Officer Username:</label>
+  <input type="text" id="officer-username" name="officer-username" placeholder="Officer Username">
+
+  <label for="officer-password">Password:</label>
+  <input type="password" id="officer-password" name="officer-password" minlength="4" required>
+
+  <button type="submit">Login as Officer</button>
+</form>
+
+<a href="/login">Login as user</a>
+</body>
+</html>

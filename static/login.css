@@ -1,0 +1,113 @@
+body {
+  /* Animated gradient background */
+  background: linear-gradient(270deg, #4caf50, #00543f, #1e3c72, #2a5298);
+  background-size: 800% 800%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+form {
+  max-width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: none; /* No jump on button */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 22px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00509e; /* Slightly lighter navy on hover */
+  text-decoration: underline;
+  text-shadow: none; /* No glow */
+}
+
+@media (max-width: 480px) {
+  form {
+    margin: 20px 15px;
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  button[type="submit"] {
+    font-size: 1.2rem;
+    padding: 14px;
+  }
+
+  a {
+    font-size: 1.1rem;
+  }
+}
+
+h1 {
+  color:white;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  animation: jumpHeading 2.5s infinite;
+  margin-top: 30px;
+}
+
+@keyframes jumpHeading {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+

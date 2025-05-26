@@ -1,0 +1,186 @@
+/* Fixed Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:goldenrod;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left a,
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.nav-left a.active {
+  text-decoration: underline;
+}
+
+.nav-right .logout-btn {
+  background-color: white;
+  color: #4caf50;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-right .logout-btn:hover {
+  background-color: #e8f5e9;
+}
+
+/* Ensure top padding for fixed navbar */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1fef3;
+  margin: 0;
+  padding-top: 70px; /* space for navbar */
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.1);
+  border: 2px solid #a8e6a3;
+}
+
+h1 {
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin: 15px 0 8px;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c8e6c9;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.location-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.location-group input {
+  flex: 1;
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 300px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 2px dashed #a8e6a3;
+  display: none;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+button.secondary {
+  background-color: #f5f5f5;
+  color: #2e7d32;
+  border: 2px solid #4caf50;
+}
+
+#locationStatus {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 15px;
+  }
+
+  .location-group {
+    flex-direction: column;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    padding: 10px;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Garbage Alert System</title>
+  <style>
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: goldenrod;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      box-shadow: 0 2px 5px rgba(133, 107, 107, 0.918);
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar a:last-child {
+      margin-right: 0;
+    }
+    .nav-left a:hover,
+    .nav-right a:hover {
+      text-decoration: underline;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    /* To prevent content hiding behind navbar */
+    body {
+      padding-top: 56px; /* navbar height + some spacing */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 40px auto 40px auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Keep existing styles */
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #34495e;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+    }
+    p, ul {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+    ul {
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    .join-us {
+      background-color: #3498db;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+        <a href="/">Home</a>
+       <a href="/complaint">Register a Complaint</a>
+       <a href="/about">About Us</a>
+       <a href="/faq">FAQs</a>
+    </div>
+    <div class="nav-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <h1>About Us</h1>
+
+  <h2>Our Mission:</h2>
+  <p>We believe that clean streets are a basic right, not a luxury. Our mission is to create garbage-free neighborhoods by enabling citizens to report waste in public areas and holding municipal services accountable for timely clean-up.</p>
+
+  <h2>What We Do:</h2>
+  <p>This platform allows citizens to easily upload photos of garbage-filled streets, which are then reviewed by our AI system. If garbage is detected, a cleaning request is automatically forwarded to the local municipality. After cleanup, a follow-up image is uploaded and verified by AI to ensure the job was completed.</p>
+
+  <h2>Why It Matters:</h2>
+  <p>Unclean streets aren’t just an eyesore — they contribute to health hazards, pollution, and community neglect. With your help, we’re using technology to make a real difference, one street at a time.</p>
+
+  <h2>How It Works:</h2>
+  <ul>
+    <li>Citizens report by uploading a photo with location.</li>
+    <li>AI confirms presence of garbage → ticket is created.</li>
+    <li>Municipality is notified and cleans the area.</li>
+    <li>Cleanup photo is uploaded and verified.</li>
+    <li>Ticket is closed and visible on the public dashboard.</li>
+  </ul>
+
+  <div class="join-us">
+    <p>Whether you're a concerned citizen or a municipal partner, your participation brings us closer to cleaner, healthier communities.</p>
+  </div>
+
+</body>
+</html>
+

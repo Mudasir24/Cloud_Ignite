@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Garbage Alert System - FAQ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+      margin: 0;
+    }
+
+    /* Navbar styles matching complaint.html */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      background-color:goldenrod;
+      padding: 14px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .navbar a:last-child {
+      margin-right: 0;
+    }
+
+    .nav-left a:hover,
+    .nav-right a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .logout-btn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .logout-btn:hover {
+      background-color: #ff0000;
+    }
+
+    /* Push page content down so navbar doesn't cover it */
+    h1 {
+      margin-top: 80px;
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+
+    .faq {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 15px;
+    }
+
+    .question {
+      font-weight: bold;
+      color: #34495e;
+    }
+
+    .answer {
+      margin-top: 5px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/">Home</a>
+      <a href="/complaint">Register a Complaint</a>
+      <a href="/about">About Us</a>
+      <a href="/faq">FAQs</a>
+    </div>
+    <div class="nav-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  <!-- FAQ Content -->
+  <h1>Frequently Asked Questions (FAQ)</h1>
+
+  <div class="faq">
+    <div class="question">1. How do I report garbage on my street?</div>
+    <div class="answer">
+      Log in to our website, click a photo of the overflowing garbage bin, allow location access (or manually enter the address), and submit the form.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">2. What happens after I submit a report?</div>
+    <div class="answer">
+      Your image is processed by our AI, which verifies if the garbage is full, overflowing, or already clean. If validated, the report is sent to the concerned officer for further action.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">3. How do I know if my report is being acted on?</div>
+    <div class="answer">
+      You can check the status of your report in your personal dashboard. The officer uploads an “after cleaning” image once the task is done.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">4. Can I report anonymously?</div>
+    <div class="answer">
+      No. You must create an account and log in to submit a report. This ensures accountability and tracking of reports.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">5. What if the garbage is not cleaned properly?</div>
+    <div class="answer">
+      If an area still appears unclean after an officer’s update, you can report it again. The system currently treats each report as a separate entry.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">6. Who is responsible for the cleaning?</div>
+    <div class="answer">
+      Officers (garbage collection personnel) are assigned specific areas. Once a report from their zone is validated, it becomes visible on their dashboard for action.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">7. Is this available in all cities?</div>
+    <div class="answer">
+      Currently, the system is operational in Hyderabad only. Expansion to other cities is planned in the future.
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="question">8. Is there any reward system for regular users?</div>
+    <div class="answer">
+      While there’s no reward system yet, our dashboard highlights the <strong>Top 10 Contributors</strong> — users who’ve submitted the most verified reports.
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 80px 30px 30px;
+      background: #eaf4ec;
+      color: #2e4631;
+      margin: 0;  
+      background-image: url("https://images.pexels.com/photos/352096/pexels-photo-352096.jpeg?cs=srgb&dl=pexels-achim-bongard-87217-352096.jpg&fm=jpg");
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed ;
+      background-repeat: no-repeat;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: linear-gradient(90deg, #3e8e41, #8bc34a);
+      color: #f0fff0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      box-shadow: 0 3px 8px rgba(62, 142, 65, 0.4);
+      z-index: 1000;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+    }
+
+    .navbar .logout-btn {
+      background-color: #b93e3e;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #fff8dc;
+      box-shadow: 0 4px 6px rgba(185, 62, 62, 0.4);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar .logout-btn:hover {
+      background-color: #8c2e2e;
+      color: #fdf6e3;
+      box-shadow: 0 6px 10px rgba(140, 46, 46, 0.6);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #4d704d;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f4fff4;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(46, 70, 49, 0.15);
+      font-weight: 600;
+    }
+
+    thead tr {
+      background: linear-gradient(90deg, #8bc34a, #3e8e41);
+      color: #2e4631;
+      font-size: 1rem;
+      border-bottom: 3px solid #4d704d;
+    }
+
+    thead th {
+      padding: 15px 12px;
+      border-right: 2px solid rgba(46, 70, 49, 0.4);
+      text-align: center;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    thead th:last-child {
+      border-right: none;
+    }
+
+    tbody tr {
+      border-bottom: 1.5px solid #cde4c7;
+      transition: background-color 0.3s ease;
+    }
+
+    tbody tr:hover {
+      background-color: #e3fbe4;
+    }
+
+    tbody td {
+      padding: 15px 12px;
+      text-align: center;
+      border-right: 1.5px solid #cde4c7;
+      vertical-align: middle;
+      color: #2e4631;
+      font-weight: 600;
+    }
+
+    tbody td:last-child {
+      border-right: none;
+    }
+
+    button, .complete-link {
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 22px;
+      background: linear-gradient(135deg, #3e8e41, #8bc34a);
+      color: #2e4631;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 5px 10px rgba(62, 142, 65, 0.4);
+      transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+      min-width: 130px;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+   
+    button:hover:not(:disabled), .complete-link:hover {
+      background: linear-gradient(135deg, #8bc34a, #3e8e41);
+      box-shadow: 0 7px 15px rgba(139, 195, 74, 0.7);
+      color: #f0fff0;
+    }
+
+    button:disabled {
+      background: #d2e6c2;
+      color: #5f7d5a;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .image-btn {
+      min-width: 180px;
+      min-height: 90px;
+      background: #e6f2dd url('https://cdn-icons-png.flaticon.com/512/136/136524.png') no-repeat center center;
+      background-size: 45% 45%;
+      box-shadow: inset 0 0 12px #8bc34a;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #5f7d5a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      border: 2px solid #8bc34a;
+    }
+    .rotating-globe {
+  width: 120px;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+  animation: spin 4s ease-in-out infinite, bounce 2s ease infinite;
+}
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Officer Dashboard</div>
+    <button class="logout-btn" href="/logout">Logout</button>
+  </div>
+
+  <h1>Complaint Details</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Complain ID</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Get Location</th>
+        <th>Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      {% for complaint in complaints %}
+      <tr>
+        <td>{{complaint["id"]}}</td>
+        <td>{{ complaint["description"] }}</td>
+        <td><img src="data:image/jpeg;base64,{{ complaint.image_data }}" alt="Complaint image" class="complaint-image" width="300px" height="300px" ></td>
+        <td><a href="https://www.google.com/maps/dir/?api=1&destination=17.427021,78.429938" class="complete-link">GO TO</a></td>
+        <td><form action="/complete" method="GET"><input type="hidden" name="complaint_id" value="{{ complaint_id }}"><button type="submit" class="complete-link">Verify</button></form></td>
+        
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R Complete</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='complete.css')}}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <!-- You can add navigation links here if needed -->
+      <a href="/officer-dash">Home</a>
+    </div>
+    <div class="nav-right">
+      <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+  
+
+  <div class="container">
+    <h1>Report</h1>
+    <form action="/complete" method="post" id="complaintForm" enctype="multipart/form-data">
+      <label for="complaintImage">Upload Photo:</label>
+      <input type="file" id="complaintImage" accept="image/*" name="image" />
+
+      <img id="imagePreview" alt="Preview" style="display: none;" />
+
+      <label for="addressChoice">Location Method:</label>
+      <select id="addressChoice" name="locationMethod">
+        <option value="manual">Enter Address Manually</option>
+        <option value="auto">Use Current Location</option>
+      </select>
+
+      <div id="manualAddressSection">
+        <label for="address">Full Address:</label>
+        <input
+          type="text"
+          id="address"
+          placeholder="Street, City, ZIP Code"
+          name="address"
+        />
+      </div>
+
+      <div id="autoLocationSection" style="display: none;">
+        <div class="location-group">
+          <input
+            type="text"
+            id="autoAddress"
+            placeholder="Address will appear here"
+            name="address"
+            readonly
+          />
+          <button type="button" id="getLocationBtn">📍 Get Exact Location</button>
+        </div>
+        <p id="locationStatus"></p>
+        <input type="hidden" id="latitude" name="latitude" />
+        <input type="hidden" id="longitude" name="longitude" />
+        <input type="hidden" id="exactAddress" name="exactAddress" />
+      </div>
+      <input type="hidden" id="complaint" name="complaint" value="{{complaint_id}}" />
+
+
+      <button type="submit">Verify</button>
+     
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='complete.js')}}"></script>
+</body>
+</html>
+
