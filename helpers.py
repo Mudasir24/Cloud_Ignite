@@ -73,25 +73,3 @@ def estimate_trash_level(img, results):
         return "Medium", img
     else:
         return "High", img
-
-
-def main(image_path):
-    img = cv2.imread(image_path)
-    img = cv2.resize(img, (700, 500))
-    if img is None:
-        raise FileNotFoundError(f"Image not found: {image_path}")
-
-    has_trash, results = detect_trash(img)
-    if not has_trash:
-        print("No trash detected.")
-        cvzone.putTextRect(img, 'No Trash Detected', (20, 40), scale=1.2, thickness=2, colorR=(0, 0, 255))
-    else:
-        level, img = estimate_trash_level(img, results)
-        cvzone.putTextRect(img, f'Trash Level: {level}', (20, 40), scale=1.2, thickness=2, colorR=(0, 255, 0))
-        print(f"Trash Level: {level}")
-
-    cv2.imshow("Output", img)
-    while True:
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    cv2.destroyAllWindows()
